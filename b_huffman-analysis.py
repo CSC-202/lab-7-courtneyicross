@@ -36,18 +36,52 @@ def huffman(message:str) -> float:
     # STEP 0
     ## defining our data structures
     ## defining operations
+class Node: # NOT given to students
+    # TODO
+    
 
+    def __init__(self, letter: str, frequency: int):
+        self.letter = letter
+        self.frquency = frequency
+        self.left = None
+        self.right = None
+        return
     # STEP 1
     ## counting the frequencies
+def frequencies(message: str) -> dict():
+    for letter in message:
+        freq[letter] += 1
+    return freq
 
     # STEP 2
     ## initialize the nodes
+nodes = list()
+for letter in freq:
+    nodes.append(Node(letter, freq[letter]))
 
     # STEP 3
     ## combine each nodes until there's only one item in the nodes list
+while len(nodes) > 1:
+    ## sort based on weight
+    nodes.sort(key=lambda x: x.weight, reverse=True)
+
+    ## get the first min
+    min_a: Node = nodes.pop()
+
+    ## get the second min
+    min_b: Node = nodes.pop()
+
+    ## combine the two
+    combined: Node = None # TODO
+
+    ## put the combined nodes back in the list of nodes
+    nodes.append(combined)
 
     # STEP 4
     ## reconstruct the codes
+    huff_root = nodes[0]
+    retrieve_codes(huff_root)
+    result: str = str() # TODO (hint coding[letter] -> code)
 
     # STEP 5
     ## analyize compression performance

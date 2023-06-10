@@ -25,8 +25,15 @@ coding: dict = dict()   # key  -> a letter
 class Node: # NOT given to students
     # TODO
     
-    def __init__(self):
+
+    def __init__(self, letter: str, frequency: int):
+        self.letter = letter
+        self.frquency = frequency
+        self.left = None
+        self.right = None
         return
+
+
 
 ## defining operations
 ### recursively traverses the huffman tree to record the codes
@@ -40,12 +47,19 @@ def retrieve_codes(v: Node, path: str=''):
 
 # STEP 1
 ## counting the frequencies - TODO
+def frequencies(message: str) -> dict():
+    for letter in message:
+        freq[letter] += 1
+    return freq
 
 
 # STEP 2
 ## initialize the nodes - TODO
 nodes = list()
-nodes.append(Node(0, 'a'))
+for letter in freq:
+    nodes.append(Node(letter, freq[letter]))
+
+
 
 # STEP 3 - TODO
 ## combine each nodes until there's only one item in the nodes list
